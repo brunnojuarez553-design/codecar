@@ -113,7 +113,7 @@ nav.s {
   display:flex; align-items:center; gap:14px; flex-shrink:0;
 }
 .nav-logo img {
-  height:120px; width:auto;
+  height:44px; width:auto;
   object-fit:contain;
   filter:brightness(1.05);
 }
@@ -1719,7 +1719,7 @@ footer {
 
 <!-- ══ NAV ══ -->
 <nav id="nav">
-<a href="#" class="nav-logo"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1782172906/IMG_8027_jthl8u_1_piosos.png" alt="CodeCar"></a>
+<a href="#" class="nav-logo"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1782175178/IMG_8027_jthl8u_1_brlyoq.png" alt="CodeCar"></a>
   <ul class="nav-links">
     <li><a href="#" onclick="openReproModal();return false;">Servicios ECU</a></li>
     <li><a href="#cases">Casos de Éxito</a></li>
@@ -1927,7 +1927,7 @@ footer {
     <!-- ¿Qué es el UNICHIP? -->
     <div class="unichip-block reveal">
       <div class="unichip-img">
-        <img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1782172906/IMG_8027_jthl8u_1_piosos.png" alt="CodeCar — Reprogramación ECU" style="object-fit:contain;background:#111;">
+        <img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1782175178/IMG_8027_jthl8u_1_brlyoq.png" alt="CodeCar — Reprogramación ECU" style="object-fit:contain;background:#111;">
       </div>
       <div class="unichip-body">
         <div class="unichip-tag">💻 Tecnología de Punta</div>
@@ -2434,7 +2434,46 @@ footer {
         </div>
       </div>
 
+  
+      <!-- ── VW Amarok V6 — Repro Stage 2 ── -->
+      <div class="case-card reveal d2">
+        <div class="cc-visual" style="position:relative;background:var(--ink-3);">
+          <div id="sl-amarokv6" style="position:absolute;inset:0;">
+            <div class="cc-slide active" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1782176445/IMG_8055_irleml.jpg')"></div>
+            <div class="cc-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1782176446/IMG_8056_lmoobc.jpg')"></div>
+            <div class="cc-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1782176446/IMG_8057_zt32tw.jpg')"></div>
+          </div>
+          <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,rgba(8,8,8,0.92) 0%,rgba(8,8,8,0.35) 48%,rgba(8,8,8,0.05) 78%,transparent 100%);pointer-events:none;"></div>
+          <button class="cc-arr cc-arr-l" onclick="shiftSlide('sl-amarokv6','dots-amarokv6',-1)">‹</button>
+          <button class="cc-arr cc-arr-r" onclick="shiftSlide('sl-amarokv6','dots-amarokv6',1)">›</button>
+          <div class="cc-model" style="z-index:4;">
+            <div class="cc-name">VW Amarok V6 3.0</div>
+            <div class="cc-sub">Stage 2 · EGR OFF · Optimización</div>
+          </div>
+          <div class="cc-badge" style="z-index:4;">STAGE 2</div>
+          <div id="dots-amarokv6" style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5;">
+            <div class="cc-dot on" onclick="goSlide('sl-amarokv6','dots-amarokv6',0)"></div>
+            <div class="cc-dot" onclick="goSlide('sl-amarokv6','dots-amarokv6',1)"></div>
+            <div class="cc-dot" onclick="goSlide('sl-amarokv6','dots-amarokv6',2)"></div>
+          </div>
         </div>
+        <div class="cc-data">
+          <div class="cc-metrics">
+            <div class="cc-m"><span class="cc-m-lbl">Motor</span><span class="cc-m-val">3.0 V6 TDI</span></div>
+            <div class="cc-m aft"><span class="cc-m-lbl">Servicio</span><span class="cc-m-val">Stage 2</span></div>
+            <div class="cc-m"><span class="cc-m-lbl">EGR</span><span class="cc-m-val">OFF</span></div>
+            <div class="cc-m aft"><span class="cc-m-lbl">Resultado</span><span class="cc-m-val">+HP +Torque</span></div>
+          </div>
+          <div class="cc-tags">
+            <span class="cc-tag">Stage 2</span>
+            <span class="cc-tag">EGR OFF</span>
+            <span class="cc-tag">Amarok V6</span>
+            <span class="cc-tag">+Potencia</span>
+          </div>
+        </div>
+      </div>
+
+      </div>
 
     <!-- Slider styles + JS -->
     <style>
@@ -3138,6 +3177,52 @@ function fallback(m,mo,e,obj){
   animation:reproFadeIn 0.45s var(--ease-out) forwards;
 }
 .repro-intro { text-align:center; max-width:700px; margin:0 auto 0; }
+
+/* ── Modal mobile fixes ── */
+@media(max-width:768px){
+  #reproModal {
+    background-attachment:scroll !important;
+  }
+  #reproModal .unichip-block {
+    grid-template-columns:1fr !important;
+    margin-bottom:40px;
+  }
+  #reproModal .unichip-img {
+    min-height:220px !important;
+  }
+  #reproModal .unichip-img video {
+    height:220px;
+    object-fit:cover;
+  }
+  #reproModal .unichip-img::after {
+    background:linear-gradient(180deg, transparent 50%, var(--ink) 100%) !important;
+  }
+  #reproModal .unichip-body {
+    padding:28px 20px !important;
+  }
+  #reproModal .unichip-title {
+    font-size:28px !important;
+  }
+  #reproModal .repro-resultado {
+    grid-template-columns:1fr !important;
+  }
+  #reproModal .rr-img {
+    min-height:200px !important;
+  }
+  #reproModal .rv-card {
+    padding:20px !important;
+  }
+  #reproModal .mapas-grid {
+    grid-template-columns:1fr !important;
+  }
+  #reproModal .wrap {
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+  #reproModal .repro-ventajas {
+    grid-template-columns:1fr !important;
+  }
+}
 </style>
 
 <script>
@@ -4340,8 +4425,8 @@ RESPUESTAS CORTAS y naturales (máx 4-5 líneas de texto visible por mensaje, si
     const tip = document.getElementById('kcTooltip');
     setTimeout(()=>{
       tip.classList.add('kc-show-once');
-      setTimeout(()=> tip.classList.remove('kc-show-once'), 4500);
-    }, 1800);
+      setTimeout(()=> tip.classList.remove('kc-show-once'), 10000);
+    }, 40000);
   }
 
   /* =========================================================
